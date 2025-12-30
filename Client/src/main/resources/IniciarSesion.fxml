@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1100.0" style="-fx-background-image: url(&quot;HeroA.png&quot;); -fx-background-position: left bottom; -fx-background-size: 277 auto; -fx-background-repeat: no-repeat;" styleClass="fondo-boton" stylesheets="@EstilosComunes.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="370.0" prefWidth="234.0">
+         <children>
+            <Label styleClass="texto" text="Inicio de sesión">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label styleClass="texto" text="FingerPark">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+         </children>
+         <HBox.margin>
+            <Insets top="28.0" />
+         </HBox.margin>
+      </VBox>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-radius: 66 0 0 0; -fx-background-radius: 66 0 0 0;" styleClass="fondo-principal" HBox.hgrow="ALWAYS">
+         <center>
+            <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label style="-fx-wrap-text: true;" styleClass="texto" text="Usted está intentando acceder al modo administrador,  para poder continuar por favor ingrese las credenciales suministradas previamente por su administrador del sistema." textAlignment="CENTER">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <GridPane prefHeight="50.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="60.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="90.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField id="user_tf" prefHeight="50.0" GridPane.columnIndex="1" />
+                        <TextField id="pass_tf" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets top="30.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label styleClass="texto" text="Usuario: " GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="texto" text="Contraseña: " GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets top="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button id="login_btn" mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" text="Iniciar sesión">
+                           <styleClass>
+                              <String fx:value="boton" />
+                              <String fx:value="texto" />
+                           </styleClass>
+                        </Button>
+                        <Button id="close_btn" mnemonicParsing="false" prefHeight="50.0" prefWidth="111.0" text="Cerrar">
+                           <styleClass>
+                              <String fx:value="boton" />
+                              <String fx:value="texto" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <padding>
+            <Insets left="80.0" right="80.0" />
+         </padding>
+         <HBox.margin>
+            <Insets top="55.0" />
+         </HBox.margin>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets left="20.0" />
+   </padding>
+</HBox>
