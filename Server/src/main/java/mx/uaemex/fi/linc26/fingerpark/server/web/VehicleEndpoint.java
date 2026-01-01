@@ -19,6 +19,7 @@ import mx.uaemex.fi.linc26.fingerpark.server.data.record.Visitor;
 import mx.uaemex.fi.linc26.fingerpark.server.data.repo.VehicleRepository;
 import mx.uaemex.fi.linc26.fingerpark.server.data.repo.VisitorRepository;
 import mx.uaemex.fi.linc26.fingerpark.server.data.service.VehicleService;
+import mx.uaemex.fi.linc26.fingerpark.server.data.service.VisitorService;
 import mx.uaemex.fi.linc26.fingerpark.server.data.transfer.VehicleGenericExchangeObject;
 
 @Path("/api/v1/admin/vehicles")
@@ -27,6 +28,7 @@ public class VehicleEndpoint {
 
     @Inject VisitorRepository catalog;
     @Inject VehicleRepository repo;
+    @Inject VisitorService helper;
     @Inject VehicleService service;
 
     @GET
@@ -90,6 +92,19 @@ public class VehicleEndpoint {
         vehicle.setPlate(next);
 
          return Response.ok(service.createGenericExchangeObjectFromEntity(vehicle)).build();
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{matricula}/owner")
+	public Response getVehicleOwner(@PathParam("matricula") String plate){
+        Vehicle vehicle = repo.findByPlate(plate);
+
+        if(vehicle == null){
+            return Response.status(404).build();
+        }
+
+         return Response.ok(helper.createGenericExchangeObjectFromEntity(vehicle.getOwner())).build();
 	}
 
 }
